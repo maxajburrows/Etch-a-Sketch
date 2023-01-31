@@ -1,11 +1,19 @@
 .container {
     display: grid;
     grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-    height: 500px;
-    width: 500px;
+    height: 800px;
+    width: 800px;
     place-self: center;
 }
 
 .square {
     border: 0.5px solid red;
+}
+
+/*.square:hover, .square:visited {
+    background-color: black;
+}*/
+
+.visited {
+    background-color: black;
 }

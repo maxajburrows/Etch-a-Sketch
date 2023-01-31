@@ -6,8 +6,13 @@ const createGrid = function (sideLength) {
     for (let i = 1; i <= totalSquares; i++) {
         let square = document.createElement('div');
         square.setAttribute('class', 'square');
+        square.addEventListener('mouseenter', changeColour);
         container.appendChild(square);
     }
 }
 
-createGrid(16);
+const changeColour = function () {
+    this.setAttribute('class', 'visited');
+}
+
+createGrid(16);  //Create initial grid.
