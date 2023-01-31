@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+    height: 500px;
+    width: 500px;
+    place-self: center;
+}
+
+.square {
+    border: 0.5px solid red;
+}
