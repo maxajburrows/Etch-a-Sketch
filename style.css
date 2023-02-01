@@ -4,15 +4,18 @@
     height: 800px;
     width: 800px;
     place-self: center;
+    border: 3px solid black;
 }
 
 .square {
-    border: 0.5px solid red;
+    border: 0.4px dotted rgb(239, 235, 235);
 }
 
-/*.square:hover, .square:visited {
-    background-color: black;
-}*/
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 
 .visited {
     background-color: black;
