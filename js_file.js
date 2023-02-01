@@ -1,7 +1,4 @@
 
-let mouseDown = false;
-document.onmousedown = () => mouseDown = true;
-document.onmouseup = () => mouseDown = false;
 
 const createGrid = function (sideLength) {
     let container = document.querySelector('.container');
@@ -10,12 +7,26 @@ const createGrid = function (sideLength) {
     for (let i = 1; i <= totalSquares; i++) {
         let square = document.createElement('div');
         square.setAttribute('class', 'square');
-        square.addEventListener('mouseover', changeColour);
+        square.addEventListener('mouseover', changeColourOver);
+        square.addEventListener('mousedown', changeColourDown);
         container.appendChild(square);
     }
 }
 
-const changeColour = function () {
+let mouseDown = false;
+document.body.onmouseup = () => {
+    mouseDown = false;
+}
+document.body.onmousedown = () => {
+    mouseDown = true;
+}
+
+const changeColourDown = function () {
+    mouseDown = true;
+    this.setAttribute('class', 'visited');
+}
+
+const changeColourOver = function () {
     if (mouseDown) {
     this.setAttribute('class', 'visited');
     }
