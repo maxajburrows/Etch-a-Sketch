@@ -28,3 +28,9 @@ h1 {
     font-weight: bold;
     color: white;
 }
+
+#reset {
+    height: 50px;
+    width: 300px;
+    font-size: 36px;
+}
