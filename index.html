@@ -13,9 +13,12 @@
     <div class="container"></div>
 
     <div class="controls">
-        <p>Choose your grid size</p>
-        <input type="range" min="4" max="100" value="16" class="slider">
-        <p id="gridSize"></p>
+        <button class="gridLines">Grid lines: On</button>
+        <div class="gridSize">
+            <p>Choose your grid size:</p>
+            <input type="range" min="4" max="64" value="16" id="slider">
+            <p id="gridSize"></p>
+        </div>
         <button id="reset">Clear</button>
     </div>
     

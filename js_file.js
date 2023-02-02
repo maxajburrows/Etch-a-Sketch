@@ -1,12 +1,12 @@
+let gridLines = true;
 
-
-const createGrid = function (sideLength) {
+const createGrid = function (sideLength, gridLines) {
     let container = document.querySelector('.container');  
     container.innerHTML = '';
     totalSquares = sideLength**2;
     for (let i = 1; i <= totalSquares; i++) {
         let square = document.createElement('div');
-        square.setAttribute('class', 'square');
+        if (gridLines) square.setAttribute('class', 'square');
         square.addEventListener('mouseover', changeColourOver);
         square.addEventListener('mousedown', changeColourDown);
         container.appendChild(square);
@@ -23,31 +23,46 @@ document.body.ondragstart = () => false;
 
 const changeColourDown = function () {
     mouseDown = true;
-    this.setAttribute('class', 'visited');
+    this.classList.add('class', 'visited');
 }
 
 const changeColourOver = function () {
     if (mouseDown) {
-    this.setAttribute('class', 'visited');
+    this.classList.add('class', 'visited');
     }
 }
 
+createGrid(16, gridLines);  //Create initial grid.
+
 const clearGrid = function () {
-    visited = document.querySelectorAll('.visited');
-    visited.forEach(square => square.setAttribute('class', 'square'));
+    squares = document.querySelector('.container').childNodes;
+    squares.forEach(square => {
+        (gridLines) ? square.setAttribute('class', 'square')
+                    : square.setAttribute('class', '');
+    });
 }
 
 let clear = document.querySelector('#reset');
 clear.addEventListener('click', clearGrid);
 
-let slider = document.querySelector('.slider');
+let slider = document.querySelector('#slider');
 let gridMessage = document.querySelector('#gridSize');
 gridMessage.textContent = `Grid Size: ${slider.value}x${slider.value}`;
 slider.oninput = function() {
     gridMessage.textContent = `Grid Size: ${this.value}x${this.value}`;
     clearGrid();
-    createGrid(this.value);
+    createGrid(this.value, gridLines);
 }
 
-
-createGrid(16);  //Create initial grid.
+toggleLines = document.querySelector('.gridLines');
+toggleLines.addEventListener('click', () => {
+    if (gridLines) {
+        gridLines = false
+        toggleLines.textContent = 'Grid lines: Off'
+    } else {
+        gridLines = true;
+        toggleLines.textContent = 'Grid lines: On'
+    }
+    squares = document.querySelector('.container').childNodes;
+    squares.forEach(square => square.classList.toggle('square'));
+});
