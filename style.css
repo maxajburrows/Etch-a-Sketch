@@ -64,7 +64,7 @@ p {
     margin: 10px 0px 10px 0px;
 }
 
-button {
+button, .sketch {
     width: 90%;
     font-size: 28px;
     text-align: center;
@@ -75,6 +75,25 @@ button {
     color: white;
     box-sizing: content-box;
     margin-bottom: 10px;
+}
+
+.sketch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    width: 90%;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    padding: 5px 0px 5px 0px;
+    font-size: 20px;
+    background-color: rgb(238, 238, 238); 
+    box-shadow: 0 0 3px 3px rgb(128, 120, 120);
+
+
 }
 
 #slider {
