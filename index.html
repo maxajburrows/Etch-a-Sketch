@@ -10,16 +10,17 @@
 </head>
 <body>
     <h1>Etch-a-Sketch!</h1>
-    <div class="container"></div>
-
-    <div class="controls">
-        <button class="gridLines">Grid lines: On</button>
-        <div class="gridSize">
-            <p>Choose your grid size:</p>
-            <input type="range" min="4" max="64" value="16" id="slider">
-            <p id="gridSize"></p>
+    <div class="flexContain">
+        <div class="controls">
+            <button class="gridLines">Grid lines: On</button>
+            <div class="gridSize">
+                <p>Choose your grid size:</p>
+                <input type="range" min="4" max="64" value="16" id="slider">
+                <p id="gridSize"></p>
+            </div>
+            <button id="reset">Clear</button>
         </div>
-        <button id="reset">Clear</button>
+        <div class="container"></div>
     </div>
     
 </body>
