@@ -1,4 +1,5 @@
 let gridLines = true;
+let erasing = false;
 
 const createGrid = function (sideLength, gridLines) {
     let container = document.querySelector('.container');  
@@ -23,13 +24,30 @@ document.body.ondragstart = () => false;
 
 const changeColourDown = function () {
     mouseDown = true;
-    this.classList.add('class', 'visited');
+    styleSelector.call(this);
+    //this.setAttribute('class', 'standard');
 }
 
 const changeColourOver = function () {
     if (mouseDown) {
-    this.classList.add('class', 'visited');
+        styleSelector.call(this);
+        //this.setAttribute('class', 'standard');
     }
+}
+
+const styleSelector = function () {
+    if (erasing === false) {
+        addStyle.call(this, 'standard');
+    } else if ((erasing === true) && (gridLines === true)) {
+        addStyle.call(this, 'square');
+    }
+     else if ((erasing === true) && (gridLines === false)) {
+        addStyle.call(this, '')
+    } 
+}
+
+const addStyle = function (style) {
+    this.setAttribute('class', style);
 }
 
 createGrid(16, gridLines);  //Create initial grid.
@@ -66,3 +84,9 @@ toggleLines.addEventListener('click', () => {
     squares = document.querySelector('.container').childNodes;
     squares.forEach(square => square.classList.toggle('square'));
 });
+
+let erase = document.querySelector('.erase');
+erase.addEventListener('click', () => {
+    erase.classList.toggle('eraseOn');
+    (erasing) ? erasing = false : erasing = true;
+})
