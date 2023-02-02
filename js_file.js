@@ -25,13 +25,11 @@ document.body.ondragstart = () => false;
 const changeColourDown = function () {
     mouseDown = true;
     styleSelector.call(this);
-    //this.setAttribute('class', 'standard');
 }
 
 const changeColourOver = function () {
     if (mouseDown) {
         styleSelector.call(this);
-        //this.setAttribute('class', 'standard');
     }
 }
 

@@ -19,7 +19,7 @@
 }
 
 button.eraseOn {
-    background-color: red;
+    box-shadow: inset 0 0 10px 10px rgba(255, 0, 0, 0.72);
 }
 
 body {
@@ -46,12 +46,6 @@ h1 {
     grid-column: 1 / -1;
 }
 
-p {
-    color: white;
-    font-size: 20px;
-    text-align: center;
-}
-
 .controls {
     display: flex;
     align-items: center;
@@ -61,8 +55,15 @@ p {
     background-color: rgb(27, 26, 26);
     padding: 10px 20px 10px 20px;
     border-radius: 20px;
-    width: max(250px, 25%);
+    width: max(250px, 20%);
     margin: 10px;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
 }
 
 button {
