@@ -57,7 +57,7 @@ const rainbowClass = function () {
     let green = Math.floor(Math.random()*257);
     let blue = Math.floor(Math.random()*257);
     console.log(this);
-    this.setAttribute('style', `background-color: rgb(${red}, ${green}, ${blue}); border: 0.01px solid rgb(${red}, ${green}, ${blue});`);
+    this.setAttribute('style', `background-color: rgb(${red}, ${green}, ${blue}); border-width: 0px;`);
     console.log(this.style===true);
 }
 

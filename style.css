@@ -15,7 +15,7 @@
 
 .standard {
     background-color: rgb(128, 120, 120);
-    border: 0.01px solid rgb(128, 120, 120);
+    border-width: 0px;
 }
 
 button.eraseOn {
