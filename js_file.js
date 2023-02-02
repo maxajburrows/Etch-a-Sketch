@@ -63,7 +63,17 @@ const rainbowClass = function () {
 
 const shade = function () {
     if (!this.classList.contains('shade')) {
-        this.classList.add('shade')
+        this.classList.add('shade');
+        this.setAttribute('shadingPercent', 0.1);
+        this.setAttribute('style', `background-color: rgba(0, 0, 0, 0.1); border-width: 0px`);
+    } else if ((Math.round(Number(this.getAttribute('shadingPercent'))*10)/10) === 1) {
+        return;
+    } else {
+        let alpha = Number(this.getAttribute('shadingPercent'));
+        alpha += 0.1;
+        this.setAttribute('shadingPercent', Math.round(alpha*10)/10);
+        this.setAttribute('style', `border-width: 0px; background-color: rgba(0, 0, 0, ${alpha});`);
+        console.log(this);
     }
 
 }
